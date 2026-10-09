@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240"><defs><pattern id="blDots" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#1E3A5F"/>
+    </pattern><pattern id="blDotsW" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#F1EDE2"/>
+    </pattern><pattern id="blDotsSm" width="8.4" height="8.4" patternUnits="userSpaceOnUse">
+      <circle cx="4.2" cy="4.2" r="1.9" fill="#1E3A5F"/>
+    </pattern><pattern id="blCloth" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern><g id="blPetalL"><path d="M0,-5C-7,-12 -8,-26 0,-34C8,-26 7,-12 0,-5Z" fill="url(#blDots)"/></g><g id="blPetalP"><ellipse cx="0" cy="-19" rx="8.5" ry="13" fill="url(#blDots)"/></g><g id="blBloomL">
+      <use href="#blPetalL"/><use href="#blPetalL" transform="rotate(45)"/>
+      <use href="#blPetalL" transform="rotate(90)"/><use href="#blPetalL" transform="rotate(135)"/>
+      <use href="#blPetalL" transform="rotate(180)"/><use href="#blPetalL" transform="rotate(225)"/>
+      <use href="#blPetalL" transform="rotate(270)"/><use href="#blPetalL" transform="rotate(315)"/>
+      <circle r="5.5" fill="#1E3A5F"/>
+    </g><g id="blBloomP">
+      <use href="#blPetalP"/><use href="#blPetalP" transform="rotate(45)"/>
+      <use href="#blPetalP" transform="rotate(90)"/><use href="#blPetalP" transform="rotate(135)"/>
+      <use href="#blPetalP" transform="rotate(180)"/><use href="#blPetalP" transform="rotate(225)"/>
+      <use href="#blPetalP" transform="rotate(270)"/><use href="#blPetalP" transform="rotate(315)"/>
+      <circle r="6" fill="#1E3A5F"/>
+    </g></defs><rect width="200" height="240" fill="#F6F4EE"/>
+    <path d="M84,44 L40,120 L84,196 L128,120 Z" fill="none" stroke="#1E3A5F" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+    <path d="M116,44 L72,120 L116,196 L160,120 Z" fill="none" stroke="#1E3A5F" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+    <path d="M100,88 L82,120 L100,152 L118,120 Z" fill="url(#blDotsSm)"/>
+    <circle cx="84" cy="44" r="4.6" fill="url(#blDotsSm)"/><circle cx="116" cy="44" r="4.6" fill="url(#blDotsSm)"/>
+    <circle cx="84" cy="196" r="4.6" fill="url(#blDotsSm)"/><circle cx="116" cy="196" r="4.6" fill="url(#blDotsSm)"/>
+    <path d="M100,24 L100,34 M100,206 L100,216" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 6.4"/>
+    <g transform="translate(28,120)"><path d="M0,-20 L-11,0 L0,20 L11,0 Z" fill="url(#blDotsSm)"/></g>
+    <g transform="translate(172,120)"><path d="M0,-20 L-11,0 L0,20 L11,0 Z" fill="url(#blDotsSm)"/></g>
+  </svg>

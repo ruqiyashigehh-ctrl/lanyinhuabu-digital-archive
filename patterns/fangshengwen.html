@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>方胜纹（LB-0004） · 蓝印花布数字档案</title>
+<meta name="description" content="蓝印花布纹样「方胜纹」：两枚相叠，同心相连。">
+<script>document.documentElement.className+=" lb-js";</script>
+<link rel="stylesheet" href="../assets/lanben.css">
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主内容</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="blDots" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#1E3A5F"/>
+    </pattern>
+    <pattern id="blDotsW" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#F1EDE2"/>
+    </pattern>
+    <pattern id="blCloth" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern>
+    <!-- 加密版蓝印花布点阵：与 #blCloth 同一组点，但整块缩到 0.55
+         （单元 120 → 66 格），单位面积内重复次数约 3.3 倍，
+         供第 9 块（共创工坊）这类较矮的板块使用——矮块里原尺寸会显得空。 -->
+    <pattern id="blClothDense" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="scale(.55)">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern>
+      <circle cx="4.2" cy="4.2" r="1.9" fill="#1E3A5F"/>
+    </pattern>
+      <!-- 莲瓣：上尖下阔 -->
+    <g id="blPetalL"><path d="M0,-5C-7,-12 -8,-26 0,-34C8,-26 7,-12 0,-5Z" fill="url(#blDots)"/></g>
+    <!-- 牡丹瓣：圆润 -->
+    <g id="blPetalP"><ellipse cx="0" cy="-19" rx="8.5" ry="13" fill="url(#blDots)"/></g>
+    <g id="blBloomL">
+      <use href="#blPetalL"/><use href="#blPetalL" transform="rotate(45)"/>
+      <use href="#blPetalL" transform="rotate(90)"/><use href="#blPetalL" transform="rotate(135)"/>
+      <use href="#blPetalL" transform="rotate(180)"/><use href="#blPetalL" transform="rotate(225)"/>
+      <use href="#blPetalL" transform="rotate(270)"/><use href="#blPetalL" transform="rotate(315)"/>
+      <circle r="5.5" fill="#1E3A5F"/>
+    </g>
+    <g id="blBloomP">
+      <use href="#blPetalP"/><use href="#blPetalP" transform="rotate(45)"/>
+      <use href="#blPetalP" transform="rotate(90)"/><use href="#blPetalP" transform="rotate(135)"/>
+      <use href="#blPetalP" transform="rotate(180)"/><use href="#blPetalP" transform="rotate(225)"/>
+      <use href="#blPetalP" transform="rotate(270)"/><use href="#blPetalP" transform="rotate(315)"/>
+      <circle r="6" fill="#1E3A5F"/>
+    </g>
+</defs>
+
+  <!-- 已删除全部示意性 SVG 图形：
+       ① #t-* 六个题材图形（花/浪/格/字/器/人）——题材页头图改用真实纹样图；
+       ② #m-* 纹样描摹图、#mark-* 组合脚印——整理中卡片与导航卡改用真实照片/纹样图。
+       全站二级页面不再出现任何示意 SVG，只保留布纹、花瓣等纯装饰 pattern（#bl*）。 -->
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="../index.html" aria-label="蓝印花布数字档案 首页">
+      <span class="brand__seal brand__logo" aria-hidden="true"><img src="../assets/img/brand-logo.png" alt="" width="1840" height="1840"></span>
+      <span class="serif">蓝印花布数字档案</span>
+    </a>
+    <nav class="nav__menu" aria-label="主导航">
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#intro" aria-haspopup="true">蓝印花布</a>
+        <div class="nav__sub">
+          <a href="../index.html#intro">蓝印花布的身世</a>
+          <a href="../index.html#open">蓝印花布的今生</a>
+          <a href="../index.html#value">蓝印花布的价值</a>
+          <a href="../index.html#vision">数字档案与愿景</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#themes" aria-haspopup="true">纹样题材</a>
+        <div class="nav__sub">
+          <a href="../index.html#theme-huanniao">花鸟</a>
+          <a href="../index.html#theme-yuchong">鱼虫</a>
+          <a href="../index.html#theme-jihe">几何</a>
+          <a href="../index.html#theme-wenzi">文字</a>
+          <a href="../index.html#theme-qiwu">器物</a>
+          <a href="../index.html#theme-renshi">人事</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#craft" aria-haspopup="true">五道工序</a>
+        <div class="nav__sub">
+          <a href="../index.html#step-carve">壹 · 刻版</a>
+          <a href="../index.html#step-paste">贰 · 刮浆</a>
+          <a href="../index.html#step-vat">叁 · 入缸</a>
+          <a href="../index.html#step-scrape">肆 · 刮灰</a>
+          <a href="../index.html#step-dry">伍 · 晾晒</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#people" aria-haspopup="true">两代人</a>
+        <div class="nav__sub">
+          <a href="../index.html#ppl-wuyuanxin">吴元新</a>
+          <a href="../index.html#ppl-wulingshu">吴灵姝</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#archive" aria-haspopup="true">纹样档案</a>
+        <div class="nav__sub">
+          <a href="../index.html#archive">给每一朵花，留一个数字分身</a>
+          <a href="../index.html#download">下载纹样</a>
+          <a href="../pages/studio.html">纹样共创工坊</a>
+          <a href="../pages/media.html">媒体资料</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../pages/game.html">互动游戏</a>
+      </div>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a class="btn btn--primary nav__cta" href="../assets/downloads/lanben-patterns.zip" download="lanben-patterns.zip" data-lb-zip style="min-height:44px;padding:0 22px;font-size:15px;">免费下载纹样包</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="打开菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" role="dialog" aria-modal="true" aria-label="站点菜单" inert>
+  <button class="drawer__close" id="drawerClose" aria-label="关闭菜单">&times;</button>
+  <nav aria-label="移动端导航">
+    <details>
+      <summary>蓝印花布</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#intro">蓝印花布的身世</a>
+        <a href="../index.html#open">蓝印花布的今生</a>
+        <a href="../index.html#value">蓝印花布的价值</a>
+        <a href="../index.html#vision">数字档案与愿景</a>
+      </div>
+    </details>
+    <details>
+      <summary>纹样题材</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#theme-huanniao">花鸟</a>
+        <a href="../index.html#theme-yuchong">鱼虫</a>
+        <a href="../index.html#theme-jihe">几何</a>
+        <a href="../index.html#theme-wenzi">文字</a>
+        <a href="../index.html#theme-qiwu">器物</a>
+        <a href="../index.html#theme-renshi">人事</a>
+      </div>
+    </details>
+    <details>
+      <summary>五道工序</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#step-carve">壹 · 刻版</a>
+        <a href="../index.html#step-paste">贰 · 刮浆</a>
+        <a href="../index.html#step-vat">叁 · 入缸</a>
+        <a href="../index.html#step-scrape">肆 · 刮灰</a>
+        <a href="../index.html#step-dry">伍 · 晾晒</a>
+      </div>
+    </details>
+    <details>
+      <summary>两代人</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#ppl-wuyuanxin">吴元新</a>
+        <a href="../index.html#ppl-wulingshu">吴灵姝</a>
+      </div>
+    </details>
+    <details>
+      <summary>纹样档案</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#archive">给每一朵花，留一个数字分身</a>
+        <a href="../index.html#download">下载纹样</a>
+        <a href="../pages/media.html">媒体资料</a>
+      </div>
+    </details>
+    <a href="../pages/studio.html">纹样共创 · 画板与产品试样</a>
+    <a href="../pages/game.html">互动游戏 · 九宫格拼图</a>
+    <a href="../assets/downloads/lanben-patterns.zip" download="lanben-patterns.zip" data-lb-zip>免费下载纹样包</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <section class="subhero">
+    <div class="shell">
+      <nav class="crumbs" aria-label="面包屑"><a href="../index.html">首页</a><span aria-hidden="true">/</span><a href="../index.html#archive">纹样档案</a><span aria-hidden="true">/</span><span aria-current="page">方胜纹</span></nav>
+      <div class="subhero__grid" style="margin-top:34px;">
+        <div>
+          <p class="kicker">纹样档案 · LB-0004</p>
+          <h1 class="subhero__title">方胜纹</h1>
+          <p class="lede" style="margin-top:18px;">两枚相叠，同心相连。</p>
+        </div>
+        <div class="subhero__art" aria-hidden="true"><img src="../assets/img/ban-fangsheng.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0;">
+    <div class="shell">
+      <div class="pdetail">
+        <div class="pdetail__art" role="img" aria-label="方胜纹纹样图"><img src="../assets/img/ban-fangsheng.jpg" alt="" loading="lazy"></div>
+        <div>
+          <p class="kicker">档案卡</p><dl class="ledger" style="margin-top:18px;"><div><dt>档案编号</dt><dd class="num">LB-0004</dd></div><div><dt>所属题材</dt><dd><a href="../themes/jihe.html">几何</a></dd></div><div><dt>寓意</dt><dd>同心相连 · 吉祥辟邪</dd></div><div><dt>常用载体</dt><dd>被面中心团花 · 角隅纹样 · 边饰</dd></div><div><dt>构成方式</dt><dd>双菱相叠，交叠处生出中心小菱形，左右各缀一枚小胜</dd></div><div><dt>使用场合</dt><dd>婚嫁 · 通用</dd></div></dl><div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;"><a class="btn btn--primary" href="../assets/img/orig/ban-fangsheng.png" download="LB-0004-方胜纹.png" data-lb-imgdl="ban-fangsheng.png" target="_blank" rel="noopener" style="min-height:48px;">下载纹样图（PNG 高清原图）</a><a class="btn btn--ghost" href="../themes/jihe.html">回到几何题材</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section alt" data-reveal>
+    <div class="shell">
+      <p class="kicker">纹样解读</p>
+      <h2 class="h-section" style="margin-top:14px;">为什么是「方胜纹」</h2>
+      <div class="prose" style="margin-top:28px;"><p>「胜」原是古代妇女的头饰，两枚胜相叠，就成了「方胜」。它是传统「八吉祥」之一，也是最古老的同心符号之一——两个菱形交叠，交叠处又生出一个小菱形，「同心相连」。</p><p>在蓝印花布里，方胜多做被面的中心团花，或铺在四角做角隅。刻版刻起来全是直线和折点，最考验刀锋的稳。</p><p>与盘长、回纹一样，方胜回答的是同一个问题：如何用最抽象的线条，说一句最具体的祝福。</p></div>
+    </div>
+  </section>
+  <section class="section" data-reveal>
+    <div class="shell">
+      <p class="kicker">点子结构</p>
+      <h2 class="h-section" style="margin-top:14px;">它是怎么被「点」出来的</h2>
+      <div class="prose" style="margin-top:28px;"><p>双菱以连续折线刻成，折点处点一颗稍大的点；菱内填密排点阵，靠点距变化区分前后两层面。</p></div><div style="margin-top:24px;"><span class="chip">刻法 · 以点成面</span> <span class="chip">配色 · 靛蓝 × 布白</span></div>
+    </div>
+  </section>
+  <section class="section alt" data-reveal>
+    <div class="shell">
+      <p class="kicker">实例参考</p>
+      <h2 class="h-section" style="margin-top:14px;">馆藏实物与纹样实例</h2>
+      <div class="figgrid" style="margin-top:40px;"><figure class="notefig" data-reveal><img src="../assets/img/bianji-lingxing.jpg" alt="被面边饰：菱形与连续几何纹样（特写 · 南通蓝印花布博物馆馆藏精品）" loading="lazy"><figcaption>被面边饰：菱形与连续几何纹样（特写 · 南通蓝印花布博物馆馆藏精品）</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/beimian-tuanhua.jpg" alt="蓝底白花被面 · 中心团花与多层几何边饰（南通蓝印花布博物馆馆藏精品）" loading="lazy"><figcaption>蓝底白花被面 · 中心团花与多层几何边饰（南通蓝印花布博物馆馆藏精品）</figcaption></figure></div>
+    </div>
+  </section>
+  <section class="section" data-reveal>
+    <div class="shell">
+      <p class="kicker">继续看</p>
+      <h2 class="h-section" style="margin-top:14px;">同题材与题材页</h2>
+      <div class="grid" style="margin-top:40px;"><a class="pt" href="huiwen.html" data-reveal><span class="pt__media"><img src="../assets/img/ban-huiwen.jpg" alt="回纹花版图" loading="lazy"></span><span class="pt__body"><span class="pt__name">回纹</span><span class="pt__mean">富贵不断头。</span><span class="pt__foot"><span class="chip">几何</span><span class="pt__id">LB-0005</span></span></span></a><a class="pt" href="panchangwen.html" data-reveal><span class="pt__media"><img src="../assets/img/ban-panchang.jpg" alt="盘长纹花版图" loading="lazy"></span><span class="pt__body"><span class="pt__name">盘长纹</span><span class="pt__mean">一线回环盘绕，无始无终。</span><span class="pt__foot"><span class="chip">几何</span><span class="pt__id">LB-0006</span></span></span></a><a class="pt" href="../themes/jihe.html" data-reveal><span class="pt__media"><img src="../assets/img/card-ban-huiwen.jpg" alt="几何题材纹样图" loading="lazy"></span><span class="pt__body"><span class="pt__name">几何题材</span><span class="pt__mean">回到题材页，看这一类的口诀与实物。</span><span class="pt__foot"><span class="chip">题材页</span></span></span></a></div>
+    </div>
+  </section>
+  <nav class="pn" aria-label="继续浏览">
+    <div class="shell"><div class="pn__row">
+      <a href="liannianyouyu.html"><span class="pn__lab">← 上一纹样</span><span class="pn__name">连年有余</span></a>
+      <a class="pn--next" href="huiwen.html"><span class="pn__lab">下一纹样 →</span><span class="pn__name">回纹</span></a>
+    </div></div>
+  </nav>
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__cols">
+      <details>
+        <summary>本档案</summary>
+        <ul><li><a href="../index.html#intro">蓝印花布的身世</a></li><li><a href="../index.html#value">蓝印花布的价值</a></li><li><a href="../index.html#vision">关于本档案</a></li></ul>
+      </details>
+      <details>
+        <summary>纹样档案</summary>
+        <ul><li><a href="../index.html#themes">按题材浏览</a></li><li><a href="../index.html#archive">给每一朵花，留一个数字分身</a></li><li><a href="../index.html#download">下载纹样</a></li></ul>
+      </details>
+      <details>
+        <summary>技艺</summary>
+        <ul><li><a href="../index.html#craft">五道工序</a></li><li><a href="../index.html#people">传承人</a></li><li><a href="../pages/studio.html">纹样共创工坊</a></li></ul>
+      </details>
+      <details>
+        <summary>联系</summary>
+        <ul><li><a href="../pages/contact.html">联系我们</a></li><li><a href="../pages/media.html">媒体资料</a></li></ul>
+      </details>
+    </div>
+    <p class="foot__note">本项目为大学生非物质文化遗产宣传公益作品，非商业用途。页面中的史料、年份与数据引自：中国非物质文化遗产网《「精彩非遗—分享·传承」听吴元新讲南通蓝印花布印染技艺》；《光明日报》2024 年 11 月 17 日《江苏南通蓝印花布：蓝白相生 素花蕴雅》（王蕾）；江苏省"一带一路"网《江苏南通蓝印花布印染技艺是首批国家级"非遗"》；上海市嘉定区人民政府网站《安亭与南通蓝印花布博物馆共建交流》（《嘉定报》）；央视《走遍中国》南通《蓝白色的世界》；国家质量监督检验检疫总局 2013 年第 190 号公告（南通蓝印花布地理标志产品质量技术要求）；央视网《非遗有新人｜吴灵姝：草木本心 布上青花》。页面中的纹样图形为依据传统题材重绘的示意图形，不代表任何特定藏品原件。</p>
+    <p class="foot__note">页面照片引自：央视网《非遗有新人｜吴灵姝：草木本心 布上青花》（原载荔枝新闻，2023）；《光明日报》2024 年 11 月 17 日《江苏南通蓝印花布：蓝白相生 素花蕴雅》（记者 闫汇芳、郭冠东 摄）；《知识就是力量》杂志《准备好铳子、刮浆刀、刻刀……一起制作爷爷奶奶的时尚》（2022，刊于人民日报客户端「人民号」，藏品图由南通蓝印花布博物馆提供）；南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）。照片版权归原机构与摄影者所有，此处仅作非商业性非遗宣传之用。逐条出处见<a href="../pages/media.html">媒体资料</a>页。</p>
+    <div class="foot__legal">
+      <span>© 2026 蓝印花布数字档案</span>
+      <a href="../pages/contact.html">隐私条款</a>
+      <a href="../pages/contact.html">使用条款</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/lanben.js"></script>
+<script src="../assets/lanben-dl.js" defer></script>
+
+</body>
+</html>

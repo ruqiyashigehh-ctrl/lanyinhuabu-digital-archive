@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>媒体资料 · 蓝印花布数字档案</title>
+<meta name="description" content="蓝印花布数字档案：引用资料、照片出处与授权说明。">
+<script>document.documentElement.className+=" lb-js";</script>
+<link rel="stylesheet" href="../assets/lanben.css">
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主内容</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="blDots" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#1E3A5F"/>
+    </pattern>
+    <pattern id="blDotsW" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#F1EDE2"/>
+    </pattern>
+    <pattern id="blCloth" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern>
+    <!-- 加密版蓝印花布点阵：与 #blCloth 同一组点，但整块缩到 0.55
+         （单元 120 → 66 格），单位面积内重复次数约 3.3 倍，
+         供第 9 块（共创工坊）这类较矮的板块使用——矮块里原尺寸会显得空。 -->
+    <pattern id="blClothDense" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="scale(.55)">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern>
+      <circle cx="4.2" cy="4.2" r="1.9" fill="#1E3A5F"/>
+    </pattern>
+      <!-- 莲瓣：上尖下阔 -->
+    <g id="blPetalL"><path d="M0,-5C-7,-12 -8,-26 0,-34C8,-26 7,-12 0,-5Z" fill="url(#blDots)"/></g>
+    <!-- 牡丹瓣：圆润 -->
+    <g id="blPetalP"><ellipse cx="0" cy="-19" rx="8.5" ry="13" fill="url(#blDots)"/></g>
+    <g id="blBloomL">
+      <use href="#blPetalL"/><use href="#blPetalL" transform="rotate(45)"/>
+      <use href="#blPetalL" transform="rotate(90)"/><use href="#blPetalL" transform="rotate(135)"/>
+      <use href="#blPetalL" transform="rotate(180)"/><use href="#blPetalL" transform="rotate(225)"/>
+      <use href="#blPetalL" transform="rotate(270)"/><use href="#blPetalL" transform="rotate(315)"/>
+      <circle r="5.5" fill="#1E3A5F"/>
+    </g>
+    <g id="blBloomP">
+      <use href="#blPetalP"/><use href="#blPetalP" transform="rotate(45)"/>
+      <use href="#blPetalP" transform="rotate(90)"/><use href="#blPetalP" transform="rotate(135)"/>
+      <use href="#blPetalP" transform="rotate(180)"/><use href="#blPetalP" transform="rotate(225)"/>
+      <use href="#blPetalP" transform="rotate(270)"/><use href="#blPetalP" transform="rotate(315)"/>
+      <circle r="6" fill="#1E3A5F"/>
+    </g>
+</defs>
+
+  <!-- 已删除全部示意性 SVG 图形：
+       ① #t-* 六个题材图形（花/浪/格/字/器/人）——题材页头图改用真实纹样图；
+       ② #m-* 纹样描摹图、#mark-* 组合脚印——整理中卡片与导航卡改用真实照片/纹样图。
+       全站二级页面不再出现任何示意 SVG，只保留布纹、花瓣等纯装饰 pattern（#bl*）。 -->
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="../index.html" aria-label="蓝印花布数字档案 首页">
+      <span class="brand__seal brand__logo" aria-hidden="true"><img src="../assets/img/brand-logo.png" alt="" width="1840" height="1840"></span>
+      <span class="serif">蓝印花布数字档案</span>
+    </a>
+    <nav class="nav__menu" aria-label="主导航">
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#intro" aria-haspopup="true">蓝印花布</a>
+        <div class="nav__sub">
+          <a href="../index.html#intro">蓝印花布的身世</a>
+          <a href="../index.html#open">蓝印花布的今生</a>
+          <a href="../index.html#value">蓝印花布的价值</a>
+          <a href="../index.html#vision">数字档案与愿景</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#themes" aria-haspopup="true">纹样题材</a>
+        <div class="nav__sub">
+          <a href="../index.html#theme-huanniao">花鸟</a>
+          <a href="../index.html#theme-yuchong">鱼虫</a>
+          <a href="../index.html#theme-jihe">几何</a>
+          <a href="../index.html#theme-wenzi">文字</a>
+          <a href="../index.html#theme-qiwu">器物</a>
+          <a href="../index.html#theme-renshi">人事</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#craft" aria-haspopup="true">五道工序</a>
+        <div class="nav__sub">
+          <a href="../index.html#step-carve">壹 · 刻版</a>
+          <a href="../index.html#step-paste">贰 · 刮浆</a>
+          <a href="../index.html#step-vat">叁 · 入缸</a>
+          <a href="../index.html#step-scrape">肆 · 刮灰</a>
+          <a href="../index.html#step-dry">伍 · 晾晒</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#people" aria-haspopup="true">两代人</a>
+        <div class="nav__sub">
+          <a href="../index.html#ppl-wuyuanxin">吴元新</a>
+          <a href="../index.html#ppl-wulingshu">吴灵姝</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#archive" aria-haspopup="true">纹样档案</a>
+        <div class="nav__sub">
+          <a href="../index.html#archive">给每一朵花，留一个数字分身</a>
+          <a href="../index.html#download">下载纹样</a>
+          <a href="../pages/studio.html">纹样共创工坊</a>
+          <a href="../pages/media.html">媒体资料</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../pages/game.html">互动游戏</a>
+      </div>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a class="btn btn--primary nav__cta" href="../assets/downloads/lanben-patterns.zip" download="lanben-patterns.zip" data-lb-zip style="min-height:44px;padding:0 22px;font-size:15px;">免费下载纹样包</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="打开菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" role="dialog" aria-modal="true" aria-label="站点菜单" inert>
+  <button class="drawer__close" id="drawerClose" aria-label="关闭菜单">&times;</button>
+  <nav aria-label="移动端导航">
+    <details>
+      <summary>蓝印花布</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#intro">蓝印花布的身世</a>
+        <a href="../index.html#open">蓝印花布的今生</a>
+        <a href="../index.html#value">蓝印花布的价值</a>
+        <a href="../index.html#vision">数字档案与愿景</a>
+      </div>
+    </details>
+    <details>
+      <summary>纹样题材</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#theme-huanniao">花鸟</a>
+        <a href="../index.html#theme-yuchong">鱼虫</a>
+        <a href="../index.html#theme-jihe">几何</a>
+        <a href="../index.html#theme-wenzi">文字</a>
+        <a href="../index.html#theme-qiwu">器物</a>
+        <a href="../index.html#theme-renshi">人事</a>
+      </div>
+    </details>
+    <details>
+      <summary>五道工序</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#step-carve">壹 · 刻版</a>
+        <a href="../index.html#step-paste">贰 · 刮浆</a>
+        <a href="../index.html#step-vat">叁 · 入缸</a>
+        <a href="../index.html#step-scrape">肆 · 刮灰</a>
+        <a href="../index.html#step-dry">伍 · 晾晒</a>
+      </div>
+    </details>
+    <details>
+      <summary>两代人</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#ppl-wuyuanxin">吴元新</a>
+        <a href="../index.html#ppl-wulingshu">吴灵姝</a>
+      </div>
+    </details>
+    <details>
+      <summary>纹样档案</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#archive">给每一朵花，留一个数字分身</a>
+        <a href="../index.html#download">下载纹样</a>
+        <a href="../pages/media.html">媒体资料</a>
+      </div>
+    </details>
+    <a href="../pages/studio.html">纹样共创 · 画板与产品试样</a>
+    <a href="../pages/game.html">互动游戏 · 九宫格拼图</a>
+    <a href="../assets/downloads/lanben-patterns.zip" download="lanben-patterns.zip" data-lb-zip>免费下载纹样包</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <section class="subhero">
+    <div class="shell">
+      <nav class="crumbs" aria-label="面包屑"><a href="../index.html">首页</a><span aria-hidden="true">/</span><span aria-current="page">媒体资料</span></nav>
+      <div class="subhero__grid subhero__grid--text" style="margin-top:34px;">
+        <div>
+          <p class="kicker">资料来源</p>
+          <h1 class="subhero__title subhero__title--icon"><span>媒体资料</span><span class="subhero__title-icon" aria-hidden="true"><img src="../assets/img/icon-media.png" alt="" width="1840" height="1840"></span></h1>
+          <p class="lede" style="margin-top:18px;">本项目引用过的全部报道、文章与照片出处，逐条可查。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-reveal>
+    <div class="shell">
+      <p class="kicker">报道与文章</p>
+      <h2 class="h-section" style="margin-top:14px;">本页引用的文字资料</h2>
+      <div class="prose" style="margin-top:28px;"><p>页面中出现的年份、数据、职务与引语，全部来自下面这些公开报道。每一条都可以点开原文核对——这是本项目在「资料是否可查」上的基本要求。</p></div><ol class="srclist"><li><p class="srclist__no">资料 01</p><h3 class="serif">《江苏南通蓝印花布：蓝白相生 素花蕴雅》</h3><p class="srclist__meta">光明网 ·《光明日报》 · 2024 年 11 月 17 日 · 王蕾；照片 记者 闫汇芳、郭冠东 摄</p><p class="srclist__used">页面引用：国家级非遗名录与项目编号、吴元新收集实物六万余件与纹样二十万余个、复色印染技艺与「凤戏牡丹」台布等藏品、南通大学蓝印花布艺术研究院</p><p class="srclist__used">对应图片：未使用照片（本条仅引用文字资料）</p><p class="srclist__link"><a href="https://news.gmw.cn/2024-11/17/content_37681210.htm" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 02</p><h3 class="serif">《非遗有新人 | 吴灵姝：草木本心 布上青花》</h3><p class="srclist__meta">央视网（原载荔枝新闻） · 2023 年 1 月 10 日 · 编辑 林涛</p><p class="srclist__used">页面引用：吴灵姝的学艺经历与两代人传承故事、其受访原话、刮浆与刻版的工艺细节</p><p class="srclist__used">对应图片：craft-carve.jpg、craft-vat.jpg、people-dry.jpg</p><p class="srclist__link"><a href="https://news.cctv.cn/2023/01/10/ARTIeN5XBGI5OIOJCUKOYzO8230110.shtml" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 03</p><h3 class="serif">《准备好铳子、刮浆刀、刻刀……一起制作爷爷奶奶的时尚》</h3><p class="srclist__meta">《知识就是力量》杂志（刊于人民日报客户端「人民号」） · 2022 年 6 月 26 日 · 《知识就是力量》杂志</p><p class="srclist__used">页面引用：五道工序的分步细节与用具（铳子、刮浆刀、刻刀）、防染浆的黄豆粉与石灰粉配比、南通蓝印花布博物馆藏清代实物</p><p class="srclist__used">对应图片：craft-paste.jpg、craft-scrape.jpg、craft-dry.jpg、cloth-phoenix.jpg、cloth-vine.jpg、cloth-shou.jpg</p><p class="srclist__link"><a href="https://www.peopleapp.com/rmharticle/30028506239" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 04</p><h3 class="serif">《「精彩非遗—分享·传承」听吴元新讲南通蓝印花布印染技艺》</h3><p class="srclist__meta">中国非物质文化遗产网（原载「江苏省文化馆」微信公众号） · 2019 年 4 月 12 日 · 中国非物质文化遗产网</p><p class="srclist__used">页面引用：吴元新的职务与从业经历、十七岁进厂当学徒、其受访原话</p><p class="srclist__used">对应图片：未使用照片</p><p class="srclist__link"><a href="https://www.ihchina.cn/news_1_details/18536.html" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 05</p><h3 class="serif">《「元新蓝」蓝印花图案知多少？纹样均选自吴元新三十年来收集、整理、研究、出版的《中国蓝印花布纹样大全》》</h3><p class="srclist__meta">南通蓝印花布博物馆官网 · 2016 年 4 月 6 日 · 南通蓝印花布博物馆</p><p class="srclist__used">页面引用：「吉庆有余·磬下双鱼」「鲤鱼跃龙门」被面、回环连续纹样包袱布、团寿字团花包袱布等馆藏实物的纹样图</p><p class="srclist__used">对应图片：beimian-xique.jpg、xique-dengmei.jpg、xique-meizhi.jpg、jiqingyouyu-er.jpg、liyu-longmen.jpg、chanzhi-lanyin.jpg、tuanhua-zhongxin.jpg、beimian-tuanhua.jpg、bianji-huiwen.jpg、bianji-lingxing.jpg、beimian-baxian.jpg、renwu-baxian.jpg、shupu-lanyin.jpg</p><p class="srclist__link"><a href="http://www.wuyuanxin.com/news/post/205438/" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 06</p><h3 class="serif">南通蓝印花布博物馆官网「全部产品」页（蓝印花布文创器物）</h3><p class="srclist__meta">南通蓝印花布博物馆官网 · 页面持续更新 · 南通蓝印花布博物馆</p><p class="srclist__used">页面引用：折扇、手提包、抱枕等蓝印花布器物实例照片，用于说明纹样在当代器物上的应用</p><p class="srclist__used">对应图片：qi-zheshan.jpg、qi-shoutidai.jpg、qi-baozhen.jpg</p><p class="srclist__link"><a href="http://www.wuyuanxin.com/project/" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 07</p><h3 class="serif">《江苏南通蓝印花布印染技艺是首批国家级「非遗」》</h3><p class="srclist__meta">江苏省「一带一路」网 · 2022 年 3 月 29 日 · 江苏省「一带一路」网</p><p class="srclist__used">页面引用：起源南宋与八百余年传承、俗称「药斑布」、明代《南通县志》染坊记载、五道工序的浸染 20 分钟 / 氧化 30 分钟 / 反复 6—8 次 / 晾晒架约 7 米</p><p class="srclist__used">对应图片：未使用照片（该站为政务站点，在部分网络环境下可能需境内网络打开）</p><p class="srclist__link"><a href="https://ydyl.jiangsu.gov.cn/art/2022/3/29/art_76472_10395005.html" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 08</p><h3 class="serif">《安亭与南通蓝印花布博物馆共建交流》</h3><p class="srclist__meta">上海市嘉定区人民政府网站（来源：上海嘉定，《嘉定报》） · 2019 年 6 月 26 日 · 《嘉定报》记者 李华成</p><p class="srclist__used">页面引用：《古今图书集成·职方典》关于药斑布的记载原文、药斑布出自嘉定与安亭镇（宋嘉定中 1208—1224）、宋代称药斑布 / 明代称浇花布 / 今称蓝印花布</p><p class="srclist__used">对应图片：未使用照片（本条仅引用文字资料）</p><p class="srclist__link"><a href="https://www.jiading.gov.cn/qypd/jjxw/content_597420" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 09</p><h3 class="serif">电视专题片《走遍中国》南通《蓝白色的世界》文字稿</h3><p class="srclist__meta">央视网（CCTV-4） · 2004 年 9 月 29 日播出（文字稿 2004 年 10 月 12 日发布） · 中央电视台《走遍中国》栏目</p><p class="srclist__used">页面引用：南通的种棉与种蓝制靛业、土靛作为贡品上缴朝廷（仅海门一地每年 350 斤）、清末南通县二甲镇二十余家染坊、走街串巷的「花担艺人」与花样翻新、「蓝印花布」名称到明末清初才通行</p><p class="srclist__used">对应图片：未使用照片（本条仅引用文字资料）</p><p class="srclist__link"><a href="https://news.cctv.com/program/zbzg/20041012/101450.shtml" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 10</p><h3 class="serif">《南通蓝印花布》地理标志产品信息（国家质量监督检验检疫总局 2013 年第 190 号公告摘录）</h3><p class="srclist__meta">中国网财经 · 2014 年 10 月 16 日 · 中国网财经</p><p class="srclist__used">页面引用：蓝白二色的生成原理（防染浆挡色）、手工染布自然形成的「冰裂纹」与图案「断刀」特点、2013 年获批国家地理标志保护产品</p><p class="srclist__used">对应图片：未使用照片（本条仅引用文字资料）</p><p class="srclist__link"><a href="https://finance.china.com.cn/consume/20141016/2730217.shtml" target="_blank" rel="noopener">查看原文 ↗</a></p></li><li><p class="srclist__no">资料 11</p><h3 class="serif">五道工序演示影像（视频 · 全片 2 分 51 秒）</h3><p class="srclist__meta">视频 · 抖音 @赵小满（抖音号：56148294854） · 2026 年收录 · 视频由参赛团队整理提供</p><p class="srclist__used">页面引用：首页「过五关，斩六将」板块末尾的完整演示视频——从刻版、刮浆、入缸、晾晒到退浆显花（刮灰）的全过程</p><p class="srclist__used">对应图片：视频封面帧（站内 assets/video/ 目录，craft-story-poster.jpg）</p><p class="srclist__link"><a href="https://v.douyin.com/SUmLMmYsfEI/" target="_blank" rel="noopener">抖音原视频：《这是属于我们的中国蓝——蓝印花布》 ↗</a></p></li></ol>
+    </div>
+  </section>
+  <section class="section alt" data-reveal>
+    <div class="shell">
+      <p class="kicker">照片素材</p>
+      <h2 class="h-section" style="margin-top:14px;">站内使用的照片与拍摄者</h2>
+      <div class="prose" style="margin-top:28px;"><p>站内共使用 36 张照片，全部来自上列公开报道，未做改变画面内容的处理（仅裁切与压缩）。两张传承人头像由报道画面裁切而来。</p></div><div class="figgrid" style="margin-top:40px;"><figure class="notefig" data-reveal><img src="../assets/img/craft-carve.jpg" alt="刻版：刻刀沿墨线在花版上行走　—　央视网《非遗有新人》（原载荔枝新闻）｜用于：首页 · 五道工序" loading="lazy"><figcaption>刻版：刻刀沿墨线在花版上行走　—　央视网《非遗有新人》（原载荔枝新闻）｜用于：首页 · 五道工序</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/craft-paste.jpg" alt="刮浆：防染浆透过花版刮在坯布上　—　《知识就是力量》杂志｜用于：首页 · 五道工序" loading="lazy"><figcaption>刮浆：防染浆透过花版刮在坯布上　—　《知识就是力量》杂志｜用于：首页 · 五道工序</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/craft-vat.jpg" alt="入缸：吴元新与吴灵姝在靛蓝染缸前　—　央视网《非遗有新人》（原载荔枝新闻）｜用于：首页 · 五道工序" loading="lazy"><figcaption>入缸：吴元新与吴灵姝在靛蓝染缸前　—　央视网《非遗有新人》（原载荔枝新闻）｜用于：首页 · 五道工序</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/craft-scrape.jpg" alt="刮灰：刮刀刮去干透的防染浆，白花显现　—　《知识就是力量》杂志｜用于：首页 · 五道工序" loading="lazy"><figcaption>刮灰：刮刀刮去干透的防染浆，白花显现　—　《知识就是力量》杂志｜用于：首页 · 五道工序</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/craft-dry.jpg" alt="晾晒：染好的布挂上高高的晾晒架　—　《知识就是力量》杂志｜用于：首页 · 五道工序" loading="lazy"><figcaption>晾晒：染好的布挂上高高的晾晒架　—　《知识就是力量》杂志｜用于：首页 · 五道工序</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/avatar-wuyuanxin.jpg" alt="国家级非遗代表性传承人 吴元新（头像）　—　裁自央视网《非遗有新人》画面｜用于：首页 · 两代人" loading="lazy"><figcaption>国家级非遗代表性传承人 吴元新（头像）　—　裁自央视网《非遗有新人》画面｜用于：首页 · 两代人</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/avatar-wulingshu.jpg" alt="市级非遗传承人 吴灵姝（头像）　—　裁自央视网《非遗有新人》画面｜用于：首页 · 两代人" loading="lazy"><figcaption>市级非遗传承人 吴灵姝（头像）　—　裁自央视网《非遗有新人》画面｜用于：首页 · 两代人</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/people-dry.jpg" alt="吴灵姝在查看晾晒的蓝印花布　—　央视网《非遗有新人》（原载荔枝新闻）｜用于：首页 · 两代人" loading="lazy"><figcaption>吴灵姝在查看晾晒的蓝印花布　—　央视网《非遗有新人》（原载荔枝新闻）｜用于：首页 · 两代人</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/cloth-phoenix.jpg" alt="清代「凤戏牡丹」蓝印花布包袱布（南通蓝印花布博物馆藏）　—　《知识就是力量》杂志｜用于：凤戏牡丹页" loading="lazy"><figcaption>清代「凤戏牡丹」蓝印花布包袱布（南通蓝印花布博物馆藏）　—　《知识就是力量》杂志｜用于：凤戏牡丹页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/cloth-vine.jpg" alt="清代蓝印花布包袱布 · 中心团凤、缠枝花卉边饰（南通蓝印花布博物馆藏）　—　《知识就是力量》杂志｜用于：首页 · 蓝印花布的身世 / 凤戏牡丹页" loading="lazy"><figcaption>清代蓝印花布包袱布 · 中心团凤、缠枝花卉边饰（南通蓝印花布博物馆藏）　—　《知识就是力量》杂志｜用于：首页 · 蓝印花布的身世 / 凤戏牡丹页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/fish-jiqingyouyu.jpg" alt="白底蓝花「吉庆有余」· 磬下双鱼　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：连年有余页" loading="lazy"><figcaption>白底蓝花「吉庆有余」· 磬下双鱼　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：连年有余页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/fish-liyutiaomen.jpg" alt="蓝底白花被面「鲤鱼跃龙门」　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：连年有余页" loading="lazy"><figcaption>蓝底白花被面「鲤鱼跃龙门」　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：连年有余页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/huiwen-baofu.jpg" alt="白底蓝花包袱布 · 中心八边形回环连续纹样　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：几何题材页 / 回纹页" loading="lazy"><figcaption>白底蓝花包袱布 · 中心八边形回环连续纹样　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：几何题材页 / 回纹页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/tuanhua-shouzi.jpg" alt="蓝底白花包袱布 · 中心团寿字团花　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：文字题材页" loading="lazy"><figcaption>蓝底白花包袱布 · 中心团寿字团花　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：文字题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/cloth-shou.jpg" alt="清代寿字纹包袱布（南通蓝印花布博物馆藏）　—　《知识就是力量》杂志｜用于：文字题材页" loading="lazy"><figcaption>清代寿字纹包袱布（南通蓝印花布博物馆藏）　—　《知识就是力量》杂志｜用于：文字题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/beimian-xique.jpg" alt="被面「喜鹊登梅」　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：花鸟题材页" loading="lazy"><figcaption>被面「喜鹊登梅」　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：花鸟题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/xique-dengmei.jpg" alt="「喜鹊登梅」局部：梅枝、喜鹊与蝴蝶　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：花鸟题材页" loading="lazy"><figcaption>「喜鹊登梅」局部：梅枝、喜鹊与蝴蝶　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：花鸟题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/xique-meizhi.jpg" alt="「喜鹊登梅」局部：鹊立梅梢　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：花鸟题材页" loading="lazy"><figcaption>「喜鹊登梅」局部：鹊立梅梢　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：花鸟题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/jiqingyouyu-er.jpg" alt="白底蓝花「吉庆有余」· 磬下双鱼（另一件）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：鱼虫题材页" loading="lazy"><figcaption>白底蓝花「吉庆有余」· 磬下双鱼（另一件）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：鱼虫题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/liyu-longmen.jpg" alt="蓝底白花「鲤鱼跃龙门」局部：鱼跃与龙门　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：鱼虫题材页" loading="lazy"><figcaption>蓝底白花「鲤鱼跃龙门」局部：鱼跃与龙门　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：鱼虫题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/chanzhi-lanyin.jpg" alt="蓝印花布 · 缠枝花卉与中心团花（局部）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：蝶恋花页 / 并蒂莲页" loading="lazy"><figcaption>蓝印花布 · 缠枝花卉与中心团花（局部）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：蝶恋花页 / 并蒂莲页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/tuanhua-zhongxin.jpg" alt="被面中心团花（特写）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：蝶恋花页 / 双喜团花页" loading="lazy"><figcaption>被面中心团花（特写）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：蝶恋花页 / 双喜团花页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/beimian-tuanhua.jpg" alt="蓝底白花被面 · 中心团花与多层几何边饰　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：首页 · 蓝印花布的身世 / 方胜纹页 / 盘长纹页" loading="lazy"><figcaption>蓝底白花被面 · 中心团花与多层几何边饰　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：首页 · 蓝印花布的身世 / 方胜纹页 / 盘长纹页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/bianji-huiwen.jpg" alt="被面边饰：回环连续纹样特写　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：几何题材页 / 回纹页" loading="lazy"><figcaption>被面边饰：回环连续纹样特写　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：几何题材页 / 回纹页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/bianji-lingxing.jpg" alt="被面边饰：菱形与连续几何纹样（特写）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：方胜纹页 / 盘长纹页" loading="lazy"><figcaption>被面边饰：菱形与连续几何纹样（特写）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：方胜纹页 / 盘长纹页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/beimian-baxian.jpg" alt="被面「八仙过海」　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：人事题材页 / 麒麟送子页 / 暗八仙页" loading="lazy"><figcaption>被面「八仙过海」　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：人事题材页 / 麒麟送子页 / 暗八仙页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/renwu-baxian.jpg" alt="被面「八仙过海」中的人物（局部）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：人事题材页 / 麒麟送子页 / 暗八仙页" loading="lazy"><figcaption>被面「八仙过海」中的人物（局部）　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：人事题材页 / 麒麟送子页 / 暗八仙页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/shupu-lanyin.jpg" alt="《中国蓝印花布纹样大全》（吴元新 编）书影　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：文字题材页" loading="lazy"><figcaption>《中国蓝印花布纹样大全》（吴元新 编）书影　—　南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）｜用于：文字题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/qi-zheshan.jpg" alt="蓝印花布折扇与挂饰　—　南通蓝印花布博物馆官网「全部产品」页｜用于：器物题材页 / 琴棋书画页" loading="lazy"><figcaption>蓝印花布折扇与挂饰　—　南通蓝印花布博物馆官网「全部产品」页｜用于：器物题材页 / 琴棋书画页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/qi-shoutidai.jpg" alt="蓝印花布手提包　—　南通蓝印花布博物馆官网「全部产品」页｜用于：器物题材页" loading="lazy"><figcaption>蓝印花布手提包　—　南通蓝印花布博物馆官网「全部产品」页｜用于：器物题材页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/qi-baozhen.jpg" alt="蓝印花布抱枕　—　南通蓝印花布博物馆官网「全部产品」页｜用于：器物题材页 / 琴棋书画页" loading="lazy"><figcaption>蓝印花布抱枕　—　南通蓝印花布博物馆官网「全部产品」页｜用于：器物题材页 / 琴棋书画页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/ban-qilin.jpg" alt="麒麟送子 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 人事题材页 / 麒麟送子页" loading="lazy"><figcaption>麒麟送子 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 人事题材页 / 麒麟送子页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/ban-qinqi.jpg" alt="琴棋书画 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 器物题材页 / 琴棋书画页" loading="lazy"><figcaption>琴棋书画 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 器物题材页 / 琴棋书画页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/ban-axian.jpg" alt="暗八仙 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 器物题材页 / 暗八仙页" loading="lazy"><figcaption>暗八仙 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 器物题材页 / 暗八仙页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/ban-shuangxi.jpg" alt="双喜团花 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 文字题材页 / 双喜团花页" loading="lazy"><figcaption>双喜团花 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 文字题材页 / 双喜团花页</figcaption></figure><figure class="notefig" data-reveal><img src="../assets/img/ban-bingdilian.jpg" alt="并蒂莲 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 花鸟题材页 / 并蒂莲页" loading="lazy"><figcaption>并蒂莲 · 数字化纹样图（花版）　—　参赛团队提供｜用于：首页 · 给每一朵花，留一个数字分身 / 花鸟题材页 / 并蒂莲页</figcaption></figure></div>
+    </div>
+  </section>
+  <section class="section" data-reveal>
+    <div class="shell">
+      <p class="kicker">引用与授权</p>
+      <h2 class="h-section" style="margin-top:14px;">这些内容可以怎么用</h2>
+      <div class="prose" style="margin-top:28px;"><p><strong>纹样图形</strong>：站内全部纹样是依据传统题材<strong>重绘的示意图形</strong>，不是任何藏品原件的扫描件，也不代表任何特定藏品。档案编号（LB-XXXX）为本项目自拟的整理索引，非官方编号。</p><p><strong>文字与数据</strong>：引用自公开报道，版权归原作者与媒体所有；本项目自有的整理成果（纹样重绘、文案与结构）欢迎在<strong>非商业性</strong>的学习、教学与宣传中自由使用，转载或引用请注明来源。</p><p><strong>照片</strong>：版权归原机构与摄影者所有，此处仅作非商业性非遗宣传之用。传统纹样本身属于公有领域，但<strong>照片不是</strong>——如需商业使用，请向原媒体取得授权。</p><p><strong>移除请求</strong>：若您是权利人且不希望照片被本项目使用，请通过<a href="contact.html">联系我们</a>页告知，我们将在核实后立即移除并更新本页清单。</p></div><div style="margin-top:22px;"><span class="chip">非商业性使用</span> <span class="chip">纹样为重绘示意</span> <span class="chip">照片版权归原机构</span></div>
+    </div>
+  </section>
+  <section class="section alt" data-reveal>
+    <div class="shell">
+      <p class="kicker">资料包</p>
+      <h2 class="h-section" style="margin-top:14px;">把这份清单带走</h2>
+      <div class="prose" style="margin-top:28px;"><p>下面这份清单与本站页脚、本页内容一致，可直接附在参赛或答辩材料里，用于说明资料出处。纹样包则包含 13 张高清纹样原图（PNG · 1840×1840）与一份使用说明。</p></div><div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;"><a class="btn btn--primary" href="../assets/downloads/lanben-sources.md" download="lanben-sources.md" data-lb-md style="min-height:48px;">下载资料清单（Markdown）</a><a class="btn btn--ghost" href="../assets/downloads/lanben-patterns.zip" download="lanben-patterns.zip" data-lb-zip style="min-height:48px;">免费下载纹样包</a><a class="btn btn--ghost" href="contact.html" style="min-height:48px;">联系我们</a></div>
+    </div>
+  </section>
+  <nav class="pn" aria-label="继续浏览">
+    <div class="shell"><div class="pn__row">
+      <a href="contact.html"><span class="pn__lab">← 上一页</span><span class="pn__name">联系我们</span></a>
+      <a class="pn--next" href="../index.html"><span class="pn__lab">返回 →</span><span class="pn__name">首页</span></a>
+    </div></div>
+  </nav>
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__cols">
+      <details>
+        <summary>本档案</summary>
+        <ul><li><a href="../index.html#intro">蓝印花布的身世</a></li><li><a href="../index.html#value">蓝印花布的价值</a></li><li><a href="../index.html#vision">关于本档案</a></li></ul>
+      </details>
+      <details>
+        <summary>纹样档案</summary>
+        <ul><li><a href="../index.html#themes">按题材浏览</a></li><li><a href="../index.html#archive">给每一朵花，留一个数字分身</a></li><li><a href="../index.html#download">下载纹样</a></li></ul>
+      </details>
+      <details>
+        <summary>技艺</summary>
+        <ul><li><a href="../index.html#craft">五道工序</a></li><li><a href="../index.html#people">传承人</a></li><li><a href="../pages/studio.html">纹样共创工坊</a></li></ul>
+      </details>
+      <details>
+        <summary>联系</summary>
+        <ul><li><a href="../pages/contact.html">联系我们</a></li><li><a href="../pages/media.html">媒体资料</a></li></ul>
+      </details>
+    </div>
+    <p class="foot__note">本项目为大学生非物质文化遗产宣传公益作品，非商业用途。页面中的史料、年份与数据引自：中国非物质文化遗产网《「精彩非遗—分享·传承」听吴元新讲南通蓝印花布印染技艺》；《光明日报》2024 年 11 月 17 日《江苏南通蓝印花布：蓝白相生 素花蕴雅》（王蕾）；江苏省"一带一路"网《江苏南通蓝印花布印染技艺是首批国家级"非遗"》；上海市嘉定区人民政府网站《安亭与南通蓝印花布博物馆共建交流》（《嘉定报》）；央视《走遍中国》南通《蓝白色的世界》；国家质量监督检验检疫总局 2013 年第 190 号公告（南通蓝印花布地理标志产品质量技术要求）；央视网《非遗有新人｜吴灵姝：草木本心 布上青花》。页面中的纹样图形为依据传统题材重绘的示意图形，不代表任何特定藏品原件。</p>
+    <p class="foot__note">页面照片引自：央视网《非遗有新人｜吴灵姝：草木本心 布上青花》（原载荔枝新闻，2023）；《光明日报》2024 年 11 月 17 日《江苏南通蓝印花布：蓝白相生 素花蕴雅》（记者 闫汇芳、郭冠东 摄）；《知识就是力量》杂志《准备好铳子、刮浆刀、刻刀……一起制作爷爷奶奶的时尚》（2022，刊于人民日报客户端「人民号」，藏品图由南通蓝印花布博物馆提供）；南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）。照片版权归原机构与摄影者所有，此处仅作非商业性非遗宣传之用。逐条出处见<a href="../pages/media.html">媒体资料</a>页。</p>
+    <div class="foot__legal">
+      <span>© 2026 蓝印花布数字档案</span>
+      <a href="../pages/contact.html">隐私条款</a>
+      <a href="../pages/contact.html">使用条款</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/lanben.js"></script>
+<script src="../assets/lanben-dl.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240"><defs><pattern id="blDots" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#1E3A5F"/>
+    </pattern><pattern id="blDotsW" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#F1EDE2"/>
+    </pattern><pattern id="blDotsSm" width="8.4" height="8.4" patternUnits="userSpaceOnUse">
+      <circle cx="4.2" cy="4.2" r="1.9" fill="#1E3A5F"/>
+    </pattern><pattern id="blCloth" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern><g id="blPetalL"><path d="M0,-5C-7,-12 -8,-26 0,-34C8,-26 7,-12 0,-5Z" fill="url(#blDots)"/></g><g id="blPetalP"><ellipse cx="0" cy="-19" rx="8.5" ry="13" fill="url(#blDots)"/></g><g id="blBloomL">
+      <use href="#blPetalL"/><use href="#blPetalL" transform="rotate(45)"/>
+      <use href="#blPetalL" transform="rotate(90)"/><use href="#blPetalL" transform="rotate(135)"/>
+      <use href="#blPetalL" transform="rotate(180)"/><use href="#blPetalL" transform="rotate(225)"/>
+      <use href="#blPetalL" transform="rotate(270)"/><use href="#blPetalL" transform="rotate(315)"/>
+      <circle r="5.5" fill="#1E3A5F"/>
+    </g><g id="blBloomP">
+      <use href="#blPetalP"/><use href="#blPetalP" transform="rotate(45)"/>
+      <use href="#blPetalP" transform="rotate(90)"/><use href="#blPetalP" transform="rotate(135)"/>
+      <use href="#blPetalP" transform="rotate(180)"/><use href="#blPetalP" transform="rotate(225)"/>
+      <use href="#blPetalP" transform="rotate(270)"/><use href="#blPetalP" transform="rotate(315)"/>
+      <circle r="6" fill="#1E3A5F"/>
+    </g></defs><rect width="200" height="240" fill="#F6F4EE"/>
+    <path d="M24,212 C46,204 60,214 82,210 C102,206 116,216 136,211 C152,207 164,214 176,209" fill="none" stroke="#1E3A5F" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="0.1 7.6"/>
+    <path d="M44,226 C62,219 76,228 96,224 C114,220 130,231 148,226" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 6.6"/>
+    <g transform="translate(122,146)"><use href="#blBloomP" transform="scale(1.06)"/></g>
+    <path d="M122,170 C120,186 124,198 126,208" fill="none" stroke="#1E3A5F" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="0.1 7.4"/>
+    <g transform="translate(48,176)"><use href="#blBloomL" transform="scale(0.6)"/></g>
+    <path d="M48,194 C46,200 46,204 47,208" fill="none" stroke="#1E3A5F" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 6.8"/>
+    <path d="M90,102 C102,116 110,128 116,136" fill="none" stroke="#1E3A5F" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 7"/>
+    <g transform="translate(62,78) rotate(-10)">
+      <path d="M0,-4 C-24,-28 -42,-22 -38,-2 C-35,12 -16,14 -2,5 Z" fill="url(#blDots)"/>
+      <path d="M0,-4 C24,-28 42,-22 38,-2 C35,12 16,14 2,5 Z" fill="url(#blDots)"/>
+      <path d="M-3,7 C-18,12 -24,26 -13,30 C-5,33 1,24 1,11 Z" fill="url(#blDotsSm)"/>
+      <path d="M3,7 C18,12 24,26 13,30 C5,33 -1,24 -1,11 Z" fill="url(#blDotsSm)"/>
+      <path d="M-26,-13 L-10,-6 M26,-13 L10,-6" stroke="#F6F4EE" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <ellipse cx="0" cy="3" rx="3" ry="11" fill="#1E3A5F"/>
+      <path d="M-2,-8 C-7,-17 -13,-21 -19,-22" fill="none" stroke="#1E3A5F" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 6"/>
+      <path d="M2,-8 C7,-17 13,-21 19,-22" fill="none" stroke="#1E3A5F" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 6"/>
+    </g>
+  </svg>

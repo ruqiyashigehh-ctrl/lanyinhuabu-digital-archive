@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>互动游戏 · 九宫格拼图 · 蓝印花布数字档案</title>
+<meta name="description" content="蓝印花布数字档案：九宫格拼图小游戏，把打乱的非遗纹样拼回原样。">
+<script>document.documentElement.className+=" lb-js";</script>
+<link rel="stylesheet" href="../assets/lanben.css">
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主内容</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="blDots" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#1E3A5F"/>
+    </pattern>
+    <pattern id="blDotsW" width="6.8" height="6.8" patternUnits="userSpaceOnUse">
+      <circle cx="3.4" cy="3.4" r="1.62" fill="#F1EDE2"/>
+    </pattern>
+    <pattern id="blCloth" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern>
+    <!-- 加密版蓝印花布点阵：与 #blCloth 同一组点，但整块缩到 0.55
+         （单元 120 → 66 格），单位面积内重复次数约 3.3 倍，
+         供第 9 块（共创工坊）这类较矮的板块使用——矮块里原尺寸会显得空。 -->
+    <pattern id="blClothDense" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="scale(.55)">
+      <rect width="120" height="120" fill="#101F33"/>
+      <g fill="#F1EDE2">
+        <g transform="translate(60,60)">
+          <circle cy="-22" r="3.6"/><circle cx="22" r="3.6"/><circle cy="22" r="3.6"/><circle cx="-22" r="3.6"/>
+          <circle r="3.2"/>
+          <circle cx="-11" cy="-11" r="1.9"/><circle cx="11" cy="-11" r="1.9"/>
+          <circle cx="-11" cy="11" r="1.9"/><circle cx="11" cy="11" r="1.9"/>
+        </g>
+        <g><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(120,0)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="7" r="1.7"/></g>
+        <g transform="translate(0,120)"><circle r="2.6"/><circle cx="7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <g transform="translate(120,120)"><circle r="2.6"/><circle cx="-7" r="1.7"/><circle cy="-7" r="1.7"/></g>
+        <circle cx="60" r="2"/><circle cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="60" cy="120" r="2"/>
+      </g>
+    </pattern>
+      <circle cx="4.2" cy="4.2" r="1.9" fill="#1E3A5F"/>
+    </pattern>
+      <!-- 莲瓣：上尖下阔 -->
+    <g id="blPetalL"><path d="M0,-5C-7,-12 -8,-26 0,-34C8,-26 7,-12 0,-5Z" fill="url(#blDots)"/></g>
+    <!-- 牡丹瓣：圆润 -->
+    <g id="blPetalP"><ellipse cx="0" cy="-19" rx="8.5" ry="13" fill="url(#blDots)"/></g>
+    <g id="blBloomL">
+      <use href="#blPetalL"/><use href="#blPetalL" transform="rotate(45)"/>
+      <use href="#blPetalL" transform="rotate(90)"/><use href="#blPetalL" transform="rotate(135)"/>
+      <use href="#blPetalL" transform="rotate(180)"/><use href="#blPetalL" transform="rotate(225)"/>
+      <use href="#blPetalL" transform="rotate(270)"/><use href="#blPetalL" transform="rotate(315)"/>
+      <circle r="5.5" fill="#1E3A5F"/>
+    </g>
+    <g id="blBloomP">
+      <use href="#blPetalP"/><use href="#blPetalP" transform="rotate(45)"/>
+      <use href="#blPetalP" transform="rotate(90)"/><use href="#blPetalP" transform="rotate(135)"/>
+      <use href="#blPetalP" transform="rotate(180)"/><use href="#blPetalP" transform="rotate(225)"/>
+      <use href="#blPetalP" transform="rotate(270)"/><use href="#blPetalP" transform="rotate(315)"/>
+      <circle r="6" fill="#1E3A5F"/>
+    </g>
+</defs>
+
+  <!-- 已删除全部示意性 SVG 图形：
+       ① #t-* 六个题材图形（花/浪/格/字/器/人）——题材页头图改用真实纹样图；
+       ② #m-* 纹样描摹图、#mark-* 组合脚印——整理中卡片与导航卡改用真实照片/纹样图。
+       全站二级页面不再出现任何示意 SVG，只保留布纹、花瓣等纯装饰 pattern（#bl*）。 -->
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="../index.html" aria-label="蓝印花布数字档案 首页">
+      <span class="brand__seal brand__logo" aria-hidden="true"><img src="../assets/img/brand-logo.png" alt="" width="1840" height="1840"></span>
+      <span class="serif">蓝印花布数字档案</span>
+    </a>
+    <nav class="nav__menu" aria-label="主导航">
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#intro" aria-haspopup="true">蓝印花布</a>
+        <div class="nav__sub">
+          <a href="../index.html#intro">蓝印花布的身世</a>
+          <a href="../index.html#open">蓝印花布的今生</a>
+          <a href="../index.html#value">蓝印花布的价值</a>
+          <a href="../index.html#vision">数字档案与愿景</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#themes" aria-haspopup="true">纹样题材</a>
+        <div class="nav__sub">
+          <a href="../index.html#theme-huanniao">花鸟</a>
+          <a href="../index.html#theme-yuchong">鱼虫</a>
+          <a href="../index.html#theme-jihe">几何</a>
+          <a href="../index.html#theme-wenzi">文字</a>
+          <a href="../index.html#theme-qiwu">器物</a>
+          <a href="../index.html#theme-renshi">人事</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#craft" aria-haspopup="true">五道工序</a>
+        <div class="nav__sub">
+          <a href="../index.html#step-carve">壹 · 刻版</a>
+          <a href="../index.html#step-paste">贰 · 刮浆</a>
+          <a href="../index.html#step-vat">叁 · 入缸</a>
+          <a href="../index.html#step-scrape">肆 · 刮灰</a>
+          <a href="../index.html#step-dry">伍 · 晾晒</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#people" aria-haspopup="true">两代人</a>
+        <div class="nav__sub">
+          <a href="../index.html#ppl-wuyuanxin">吴元新</a>
+          <a href="../index.html#ppl-wulingshu">吴灵姝</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../index.html#archive" aria-haspopup="true">纹样档案</a>
+        <div class="nav__sub">
+          <a href="../index.html#archive">给每一朵花，留一个数字分身</a>
+          <a href="../index.html#download">下载纹样</a>
+          <a href="../pages/studio.html">纹样共创工坊</a>
+          <a href="../pages/media.html">媒体资料</a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a class="nav__top" href="../pages/game.html">互动游戏</a>
+      </div>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a class="btn btn--primary nav__cta" href="../assets/downloads/lanben-patterns.zip" download="lanben-patterns.zip" data-lb-zip style="min-height:44px;padding:0 22px;font-size:15px;">免费下载纹样包</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="打开菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-open="false" role="dialog" aria-modal="true" aria-label="站点菜单" inert>
+  <button class="drawer__close" id="drawerClose" aria-label="关闭菜单">&times;</button>
+  <nav aria-label="移动端导航">
+    <details>
+      <summary>蓝印花布</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#intro">蓝印花布的身世</a>
+        <a href="../index.html#open">蓝印花布的今生</a>
+        <a href="../index.html#value">蓝印花布的价值</a>
+        <a href="../index.html#vision">数字档案与愿景</a>
+      </div>
+    </details>
+    <details>
+      <summary>纹样题材</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#theme-huanniao">花鸟</a>
+        <a href="../index.html#theme-yuchong">鱼虫</a>
+        <a href="../index.html#theme-jihe">几何</a>
+        <a href="../index.html#theme-wenzi">文字</a>
+        <a href="../index.html#theme-qiwu">器物</a>
+        <a href="../index.html#theme-renshi">人事</a>
+      </div>
+    </details>
+    <details>
+      <summary>五道工序</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#step-carve">壹 · 刻版</a>
+        <a href="../index.html#step-paste">贰 · 刮浆</a>
+        <a href="../index.html#step-vat">叁 · 入缸</a>
+        <a href="../index.html#step-scrape">肆 · 刮灰</a>
+        <a href="../index.html#step-dry">伍 · 晾晒</a>
+      </div>
+    </details>
+    <details>
+      <summary>两代人</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#ppl-wuyuanxin">吴元新</a>
+        <a href="../index.html#ppl-wulingshu">吴灵姝</a>
+      </div>
+    </details>
+    <details>
+      <summary>纹样档案</summary>
+      <div class="drawer__sub">
+        <a href="../index.html#archive">给每一朵花，留一个数字分身</a>
+        <a href="../index.html#download">下载纹样</a>
+        <a href="../pages/media.html">媒体资料</a>
+      </div>
+    </details>
+    <a href="../pages/studio.html">纹样共创 · 画板与产品试样</a>
+    <a href="../pages/game.html">互动游戏 · 九宫格拼图</a>
+    <a href="../assets/downloads/lanben-patterns.zip" download="lanben-patterns.zip" data-lb-zip>免费下载纹样包</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <section class="subhero">
+    <div class="shell">
+      <nav class="crumbs" aria-label="面包屑"><a href="../index.html">首页</a><span aria-hidden="true">/</span><span aria-current="page">互动游戏</span></nav>
+      <div class="subhero__grid" style="margin-top:34px;">
+        <div>
+          <p class="kicker">互动游戏</p>
+          <h1 class="subhero__title">九宫格拼图</h1>
+          <p class="lede" style="margin-top:18px;">把打散的纹样拼回原样——在动手的过程里，看清每一个图案的构图与朝向。</p>
+        </div>
+        <div class="subhero__art" aria-hidden="true"><img src="../assets/img/ban-shuangxi-sq.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+  <section class="section alt" data-reveal>
+    <div class="shell">
+      <p class="kicker">玩法</p>
+      <h2 class="h-section" style="margin-top:14px;">一张布，九块碎片</h2>
+      <div class="prose" style="margin-top:28px;"><p>挑一张纹样，它会被切成九块、顺序与朝向全部打乱。在左侧托盘里点一下碎片，它就顺时针转 90°；方向转正后，把它拖进中间棋盘——落点离它<b>真正所属的格子</b>够近，就会「咔哒」一声吸住；放错了，它会自己弹回托盘。九块全部归位、朝向转正，这块布就又完整了。</p><p>拖动时棋盘上会亮起离你最近的格子；已放好的碎片仍可点击旋转纠方向。卡住了就开「参考图」，或点「重置本次拼图」重新打乱——六个纹样，正好把「祝寿、贺子、婚嫁、耕读」的吉利话各拼一遍。</p></div><div style="margin-top:22px;"><span class="chip">点击碎片 · 旋转</span> <span class="chip">拖入棋盘 · 吸附</span> <span class="chip">位置相近 · 成功</span> <span class="chip">位置不对 · 弹回</span> <span class="chip">参考图 · 可开关</span> <span class="chip">重置 · 随时可用</span></div>
+    </div>
+  </section>
+  <section class="section" data-reveal>
+    <div class="shell">
+      <p class="kicker">开始拼图</p>
+      <h2 class="h-section" style="margin-top:14px;">选一张纹样，动手</h2>
+      
+<style>
+/* ── 九宫格拼图（仅本页使用，全部 .pg- 前缀） ───────────────────── */
+.pg{ margin-top:34px; }
+.pg-nojs{ padding:18px 22px; border:1px dashed var(--border-2); border-radius:12px;
+  background:var(--cloth-2); color:var(--gray); }
+.pg-pickbar{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.pg-pick{ width:72px; border:2px solid var(--border); border-radius:10px; overflow:hidden;
+  background:var(--cloth-pure); padding:0; cursor:pointer;
+  transition:border-color .18s var(--ease), transform .18s var(--ease); }
+.pg-pick img{ display:block; width:100%; aspect-ratio:1/1; object-fit:cover; }
+.pg-pick span{ display:block; font-size:11px; line-height:1; padding:6px 2px 7px;
+  color:var(--ink-700); text-align:center; }
+.pg-pick:hover{ transform:translateY(-2px); }
+.pg-pick:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+.pg-pick[aria-pressed="true"]{ border-color:var(--primary); box-shadow:0 0 0 1px var(--primary); }
+.pg-hud{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-top:24px;
+  padding:14px 18px; border:1px solid var(--border); border-radius:12px; background:var(--cloth-pure); }
+.pg-stat{ font-size:13px; color:var(--gray); }
+.pg-stat strong{ color:var(--ink-900); font-size:15px; margin:0 2px; }
+.pg-hudbtns{ display:flex; gap:10px; margin-left:auto; flex-wrap:wrap; }
+.pg-hudbtns .btn{ min-height:40px; padding:0 16px; font-size:13px; }
+.pg-arena{ display:flex; gap:34px; align-items:flex-start; justify-content:center;
+  margin-top:26px; flex-wrap:wrap; overflow:hidden; overflow:clip; }
+.pg-zonetitle{ font-size:12px; letter-spacing:.12em; color:var(--gray-2);
+  text-align:center; margin-bottom:10px; }
+.pg-tray{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
+  width:min(30vw,304px); padding:12px; border:1px solid var(--border);
+  border-radius:14px; background:var(--cloth-2); }
+.pg-slot{ aspect-ratio:1/1; border-radius:8px; background:var(--cloth-2);
+  box-shadow:inset 0 0 0 1px var(--hairline); }
+.pg-board{ position:relative; display:grid; grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(3,1fr); gap:5px; width:min(74vw,430px); aspect-ratio:1/1;
+  padding:9px; border:2px dashed var(--border-2); border-radius:16px; background:var(--cloth-pure);
+  transition:border-color .3s var(--ease), gap .3s var(--ease); }
+.pg-cell{ position:relative; border-radius:8px; box-shadow:inset 0 0 0 1px var(--hairline);
+  background:var(--cloth-2); transition:box-shadow .15s var(--ease); }
+.pg-cell.pg-near{ box-shadow:inset 0 0 0 2px var(--ink-300); }
+.pg-ref{ position:absolute; left:9px; top:9px; width:calc(100% - 18px); height:calc(100% - 18px);
+  object-fit:cover; border-radius:8px; opacity:0; pointer-events:none;
+  transition:opacity .25s var(--ease); }
+.pg-board.pg-showref .pg-ref{ opacity:.14; }
+.pg-piece{ position:relative; width:100%; height:100%; border-radius:8px; cursor:grab;
+  touch-action:none; user-select:none; -webkit-user-select:none;
+  box-shadow:0 1px 3px rgba(20,39,61,.22);
+  transition:transform .18s var(--ease), box-shadow .2s var(--ease); }
+.pg-piece:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+/* 拖动只改 transform（走合成层），不逐帧改 left/top，避免重排卡顿 */
+.pg-piece.pg-drag{ position:fixed; z-index:999; cursor:grabbing; will-change:transform;
+  transition:box-shadow .2s var(--ease);
+  box-shadow:0 14px 34px rgba(20,39,61,.38); }
+.pg-piece.pg-back{ transition:transform .26s var(--ease); }
+.pg-piece.pg-set{ cursor:pointer; }
+.pg-piece.pg-tilt::after{ content:"⟳"; position:absolute; top:3px; right:3px; width:17px; height:17px;
+  border-radius:50%; background:var(--ink-700); color:#fff; font-size:11px; line-height:17px;
+  text-align:center; box-shadow:0 1px 2px rgba(20,39,61,.4); }
+.pg-board.pg-done{ border-style:solid; border-color:var(--primary); gap:0; }
+.pg-board.pg-done .pg-piece{ border-radius:0; box-shadow:none; cursor:default; }
+.pg-board.pg-done .pg-ref{ opacity:0; }
+.pg-win{ position:absolute; inset:0; z-index:5; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:8px; text-align:center;
+  border-radius:14px; background:rgba(246,244,238,.94);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .4s var(--ease), visibility .4s; }
+.pg-win.pg-on{ opacity:1; visibility:visible; pointer-events:auto; }
+.pg-win__t{ font-size:30px; margin:0; color:var(--ink-900); }
+.pg-win__name{ font-size:19px; margin:0; color:var(--ink-700); }
+.pg-win__meta{ font-size:13px; color:var(--gray); margin:2px 0 10px; }
+.pg-win__btns{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+.pg-hint{ margin-top:18px; text-align:center; font-size:14px; color:var(--ink-700);
+  min-height:22px; }
+.pg-kbd{ margin-top:8px; text-align:center; font-size:12px; color:var(--gray-2); }
+.pg-cf{ position:absolute; top:-12px; width:8px; height:14px; border-radius:2px;
+  z-index:6; pointer-events:none; animation:pg-fall linear forwards; }
+@keyframes pg-fall{ to{ transform:translateY(560px) rotate(660deg); opacity:.85; } }
+@media (max-width:880px){
+  .pg-arena{ flex-direction:column-reverse; align-items:center; gap:20px; }
+  .pg-board{ width:min(94vw,430px); }
+  .pg-tray{ width:min(94vw,340px); }
+  .pg-hudbtns{ margin-left:0; }
+}
+@media (prefers-reduced-motion:reduce){
+  .pg-piece{ transition:none; }
+  .pg-piece.pg-back{ transition:none; }
+  .pg-cf{ display:none; }
+}
+</style>
+
+<div id="pgGame" class="pg">
+  <noscript><p class="pg-nojs">拼图游戏需要在浏览器中启用 JavaScript 才能游玩。你仍可浏览本站其余全部内容，或到<a href="../index.html#archive">纹样档案</a>欣赏这六个纹样。</p></noscript>
+
+  <div class="pg-pickbar" role="group" aria-label="选择拼图纹样">
+    <button type="button" class="pg-pick" data-k="fushou" aria-pressed="true"><img src="../assets/img/ban-fushou-sq.jpg" alt="福寿双全"><span>福寿双全</span></button>
+    <button type="button" class="pg-pick" data-k="magu" aria-pressed="false"><img src="../assets/img/ban-magu-sq.jpg" alt="麻姑献寿"><span>麻姑献寿</span></button>
+    <button type="button" class="pg-pick" data-k="qilin" aria-pressed="false"><img src="../assets/img/ban-qilin-sq.jpg" alt="麒麟送子"><span>麒麟送子</span></button>
+    <button type="button" class="pg-pick" data-k="axian" aria-pressed="false"><img src="../assets/img/ban-axian-sq.jpg" alt="暗八仙"><span>暗八仙</span></button>
+    <button type="button" class="pg-pick" data-k="qinqi" aria-pressed="false"><img src="../assets/img/ban-qinqi-sq.jpg" alt="琴棋书画"><span>琴棋书画</span></button>
+    <button type="button" class="pg-pick" data-k="shuangxi" aria-pressed="false"><img src="../assets/img/ban-shuangxi-sq.jpg" alt="双喜团花"><span>双喜团花</span></button>
+  </div>
+
+  <div class="pg-hud">
+    <span class="pg-stat">当前纹样 <strong id="pgName">福寿双全</strong>（<span id="pgPid">LB-0012</span>）</span>
+    <span class="pg-stat">已拼好 <strong id="pgPlaced">0</strong> / 9</span>
+    <span class="pg-stat">拖放 <strong id="pgSteps">0</strong> 步</span>
+    <span class="pg-stat">旋转 <strong id="pgRots">0</strong> 次</span>
+    <span class="pg-stat">用时 <strong id="pgTime">00:00</strong></span>
+    <span class="pg-hudbtns">
+      <button type="button" class="btn btn--ghost" id="pgRef" aria-pressed="true">参考图：开</button>
+      <button type="button" class="btn btn--ghost" id="pgReset">重置本次拼图</button>
+    </span>
+  </div>
+
+  <div class="pg-arena">
+    <div class="pg-traywrap">
+      <p class="pg-zonetitle">碎片托盘 · 点击旋转 / 拖入棋盘</p>
+      <div class="pg-tray" id="pgTray" aria-label="碎片托盘"></div>
+    </div>
+    <div class="pg-boardwrap">
+      <p class="pg-zonetitle">拼图棋盘 · 拼回完整纹样</p>
+      <div class="pg-board pg-showref" id="pgBoard">
+        <img class="pg-ref" id="pgRefImg" alt="" aria-hidden="true">
+        <div class="pg-cell" data-cell="0"></div>
+        <div class="pg-cell" data-cell="1"></div>
+        <div class="pg-cell" data-cell="2"></div>
+        <div class="pg-cell" data-cell="3"></div>
+        <div class="pg-cell" data-cell="4"></div>
+        <div class="pg-cell" data-cell="5"></div>
+        <div class="pg-cell" data-cell="6"></div>
+        <div class="pg-cell" data-cell="7"></div>
+        <div class="pg-cell" data-cell="8"></div>
+        <div class="pg-win" id="pgWin">
+          <p class="pg-win__t serif">拼好了！</p>
+          <p class="pg-win__name serif" id="pgWinName"></p>
+          <p class="pg-win__meta" id="pgWinMeta"></p>
+          <div class="pg-win__btns">
+            <button type="button" class="btn btn--primary" id="pgAgain">再拼一次</button>
+            <button type="button" class="btn btn--ghost" id="pgNext">下一张纹样</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="pg-hint" id="pgHint" role="status" aria-live="polite"></p>
+  <p class="pg-kbd">键盘玩法：Tab 选中碎片后，Enter / 空格 = 旋转；按数字 1—9 = 尝试放入对应格子（从左上角起横向数）。</p>
+</div>
+
+<script>
+(function(){
+"use strict";
+var IMG = { fushou:["福寿双全","LB-0012"], magu:["麻姑献寿","LB-0013"], qilin:["麒麟送子","LB-0008"],
+            axian:["暗八仙","LB-0009"], qinqi:["琴棋书画","LB-0010"], shuangxi:["双喜团花","LB-0011"] };
+var ORDER = ["fushou","magu","qilin","axian","qinqi","shuangxi"];
+var root = document.getElementById("pgGame");
+if(!root) return;
+var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var trayEl = document.getElementById("pgTray");
+var boardEl = document.getElementById("pgBoard");
+var refImg = document.getElementById("pgRefImg");
+var cells = [].slice.call(root.querySelectorAll(".pg-cell"));
+var picks = [].slice.call(root.querySelectorAll(".pg-pick"));
+var elName = document.getElementById("pgName"), elPid = document.getElementById("pgPid");
+var elPlaced = document.getElementById("pgPlaced"), elSteps = document.getElementById("pgSteps");
+var elRots = document.getElementById("pgRots"), elTime = document.getElementById("pgTime");
+var elHint = document.getElementById("pgHint");
+var winEl = document.getElementById("pgWin");
+var winName = document.getElementById("pgWinName"), winMeta = document.getElementById("pgWinMeta");
+var S = { k:"", src:"", steps:0, rots:0, placed:0, t0:0, tick:null, started:false, done:false };
+var dragging = null, dragInfo = null;
+var returnJobs = [];
+var rafId = 0, dragBase = { x:0, y:0 };      /* rAF 调度 + 拖动基准点（fixed 的 left/top） */
+
+function srcOf(k){ return root.querySelector('.pg-pick[data-k="'+k+'"] img').src; }
+function hint(t){ elHint.textContent = t; }
+function fmt(s){ var m=Math.floor(s/60), x=s%60; return (m<10?"0":"")+m+":"+(x<10?"0":"")+x; }
+function hud(){
+  elPlaced.textContent = S.placed; elSteps.textContent = S.steps; elRots.textContent = S.rots;
+  elName.textContent = IMG[S.k][0]; elPid.textContent = IMG[S.k][1];
+}
+function startClock(){
+  if(S.started) return;
+  S.started = true; S.t0 = Date.now();
+  S.tick = setInterval(function(){
+    elTime.textContent = fmt(Math.floor((Date.now()-S.t0)/1000));
+  }, 500);
+}
+function stopClock(){ if(S.tick){ clearInterval(S.tick); S.tick = null; } }
+function shuffled(){
+  var a=[0,1,2,3,4,5,6,7,8], i, j, t;
+  do{
+    for(i=a.length-1;i>0;i--){ j=Math.floor(Math.random()*(i+1)); t=a[i]; a[i]=a[j]; a[j]=t; }
+  }while(a.every(function(v,i){ return v===i; }));   // 防止恰好原序
+  return a;
+}
+function rotName(r){ return ["正向","右转 90°","倒转 180°","左转 90°"][r]; }
+function pieceLabel(el){
+  var idx = +el.getAttribute("data-idx"), r = +el.getAttribute("data-rot") % 4;
+  var row = Math.floor(idx/3)+1, col = idx%3+1;
+  return "碎片：第"+row+"行第"+col+"列，方向 "+rotName(r)+
+         (el.classList.contains("pg-set") ? "（已放置）" : "");
+}
+/* 性能优化：无论旋转还是拖动，都只写一条 transform字符串。
+   拖动时 = translate3d + rotate + scale，走合成层；不再逐帧改 left/top。 */
+var lastDX = 0, lastDY = 0;
+function transformOf(el){
+  var r = (+el.getAttribute("data-rot") || 0) % 4;
+  var t = "rotate(" + (r*90) + "deg)";
+  if(dragging === el){ t = "translate3d(" + lastDX + "px," + lastDY + "px,0) " + t + " scale(1.07)"; }
+  return t;
+}
+function applyRot(el){
+  el.style.transform = transformOf(el);
+  el.classList.toggle("pg-tilt", (+el.getAttribute("data-rot") || 0) % 4 !== 0);
+}
+function clearPos(el){
+  el.style.width=""; el.style.height=""; el.style.left=""; el.style.top="";
+  el.style.transform=""; el.style.willChange="";
+}
+function makePiece(idx){
+  var el = document.createElement("div");
+  el.className = "pg-piece"; el.tabIndex = 0;
+  el.setAttribute("role", "button");
+  el.setAttribute("data-idx", idx);
+  el.setAttribute("data-rot", 0);
+  el.style.backgroundImage = 'url("' + S.src + '")';
+  el.style.backgroundSize = "300% 300%";
+  el.style.backgroundPosition = (idx%3)*50 + "% " + Math.floor(idx/3)*50 + "%";
+  el.setAttribute("aria-label", pieceLabel(el));
+  bindEvents(el);
+  return el;
+}
+/* 九个格子的中心坐标在「拿起碎片的那一刻」量一次并缓存，
+   拖动过程中完全不再触发布局，这是拖拽不卡的关键一步。 */
+var cellCache = [], curNear = null;
+function cacheCells(){
+  cellCache = [];
+  for(var i=0;i<cells.length;i++){
+    var cr = cells[i].getBoundingClientRect();
+    cellCache.push({ el:cells[i], cx:cr.left+cr.width/2, cy:cr.top+cr.height/2, w:cr.width });
+  }
+}
+function clearNear(){
+  if(curNear){ curNear.classList.remove("pg-near"); curNear = null; }
+  cells.forEach(function(c){ c.classList.remove("pg-near"); });
+}
+function nearestCell(cx, cy){
+  var best = null, bestD = 1e9;
+  for(var i=0;i<cellCache.length;i++){
+    var c = cellCache[i], d = Math.hypot(cx-c.cx, cy-c.cy);
+    if(d < bestD){ bestD = d; best = c; }
+  }
+  return (best && bestD < best.w * .62) ? best.el : null;
+}
+window.addEventListener("resize", function(){ if(dragging){ cacheCells(); } });
+window.addEventListener("scroll", function(){ if(dragging){ cacheCells(); } }, true);
+function lift(el, pointerId){
+  var rc = el.getBoundingClientRect();
+  dragging = el;
+  lastDX = 0; lastDY = 0;
+  el.__home = { slot: el.parentNode, x: rc.left, y: rc.top };
+  root.appendChild(el);     /* 碎片始终属于游戏页，切换单文件版页面时不会盖在别处 */
+  try{ el.setPointerCapture(pointerId); }catch(_){}  /* DOM 移动后重新捕获指针 */
+  el.classList.add("pg-drag");
+  el.style.width = rc.width + "px"; el.style.height = rc.height + "px";
+  el.style.left = rc.left + "px"; el.style.top = rc.top + "px";
+  dragInfo.ox = rc.left; dragInfo.oy = rc.top;
+  dragInfo.w = rc.width; dragInfo.h = rc.height;
+  dragBase.x = rc.left; dragBase.y = rc.top;
+  dragInfo.dx = 0; dragInfo.dy = 0;
+  cacheCells();
+  applyRot(el);
+}
+/* 弹回：仍然维持 fixed 悬空，用 transform 滑回托盘原位，动画结束再落回卡槽 */
+function sendHome(el){
+  var home = el.__home;
+  dragging = null; if(rafId){ cancelAnimationFrame(rafId); rafId = 0; }
+  clearNear();
+  if(reduce){
+    el.classList.remove("pg-drag"); clearPos(el);
+    home.slot.appendChild(el); applyRot(el); return;
+  }
+  var r = (+el.getAttribute("data-rot") || 0) % 4;
+  el.classList.add("pg-back");
+  el.style.transform = "translate3d(" + (home.x - dragBase.x) + "px," + (home.y - dragBase.y) + "px,0) rotate(" + (r*90) + "deg)";
+  var job = { el:el, home:home, timer:null };
+  returnJobs.push(job);
+  job.timer = setTimeout(function(){
+    var i = returnJobs.indexOf(job);
+    if(i < 0) return;
+    returnJobs.splice(i, 1);
+    el.classList.remove("pg-back");
+    el.classList.remove("pg-drag");
+    clearPos(el);
+    if(home.slot.isConnected){ home.slot.appendChild(el); applyRot(el); }
+    else{ el.remove(); }
+  }, 270);
+}
+function cancelDrag(){
+  if(rafId){ cancelAnimationFrame(rafId); rafId = 0; }
+  if(dragging){
+    var el = dragging, home = el.__home;
+    dragging = null;
+    el.classList.remove("pg-drag"); clearPos(el);
+    if(home && home.slot.isConnected){ home.slot.appendChild(el); applyRot(el); }
+    else{ el.remove(); }
+  }
+  dragInfo = null;
+  clearNear();
+  returnJobs.forEach(function(job){
+    clearTimeout(job.timer);
+    job.el.classList.remove("pg-back", "pg-drag"); clearPos(job.el);
+    if(job.home.slot.isConnected){ job.home.slot.appendChild(job.el); applyRot(job.el); }
+    else{ job.el.remove(); }
+  });
+  returnJobs = [];
+}
+/* 每帧最多刷新一次：pointermove 只记录位移，真正的写入统一在 requestAnimationFrame 里做 */
+function scheduleFrame(){
+  if(rafId) return;
+  rafId = requestAnimationFrame(function(){
+    rafId = 0;
+    if(!dragInfo || !dragInfo.moved || !dragging) return;
+    lastDX = dragInfo.dx; lastDY = dragInfo.dy;
+    dragging.style.transform = transformOf(dragging);
+    var cx = dragInfo.ox + lastDX + dragInfo.w/2;
+    var cy = dragInfo.oy + lastDY + dragInfo.h/2;
+    var n = nearestCell(cx, cy);
+    if(n !== curNear){
+      if(curNear) curNear.classList.remove("pg-near");
+      if(n) n.classList.add("pg-near");
+      curNear = n;
+    }
+  });
+}
+function placeIn(el, cell){
+  dragging = null; if(rafId){ cancelAnimationFrame(rafId); rafId = 0; }
+  el.classList.remove("pg-drag");
+  clearPos(el);
+  clearNear();
+  cell.appendChild(el);
+  el.classList.add("pg-set");
+  S.placed++; S.steps++; hud();
+  el.setAttribute("aria-label", pieceLabel(el));
+  var r = +el.getAttribute("data-rot") % 4;
+  if(r !== 0){
+    hint("位置对了！但这块方向是「" + rotName(r) + "」——再点它旋转到位。");
+  }else{
+    hint("✓ 放好了 " + S.placed + " / 9" + (S.placed===9 ? "，全部就位！" : "。"));
+  }
+  checkWin();
+}
+function drop(el, cancelled){
+  /* 不再读取 getBoundingClientRect：中心 = 基准点 + 位移 + 半尺寸 */
+  var near = null;
+  if(!cancelled && dragInfo){
+    /* 用最新一次指针位移（而不是上一帧写进去的值），松手与移动的间隔再短也不会算错落点 */
+    near = nearestCell(dragInfo.ox + dragInfo.dx + dragInfo.w/2,
+                       dragInfo.oy + dragInfo.dy + dragInfo.h/2);
+  }
+  dragInfo = null;              /* 拖放流程结束，统一在这里收尾 */
+  if(!cancelled && near && near.getAttribute("data-cell") === el.getAttribute("data-idx")){
+    placeIn(el, near);
+  }else{
+    if(!cancelled){
+      S.steps++; hud();
+      hint(near ? "位置不对——这块不属于这个格子，已放回托盘。" : "离棋盘太远了，已放回托盘。");
+    }
+    sendHome(el);
+  }
+}
+function rotatePiece(el){
+  var r = (+el.getAttribute("data-rot") + 1) % 4;
+  el.setAttribute("data-rot", r);
+  S.rots++; hud();
+  el.setAttribute("aria-label", pieceLabel(el));
+  applyRot(el);
+  if(el.classList.contains("pg-set")){
+    if(r === 0){ hint("✓ 方向转正！" + S.placed + " / 9 已就位。"); checkWin(); }
+    else{ hint("现在是「" + rotName(r) + "」，再点两下转正。"); }
+  }
+}
+function tryPlace(el, cellIdx){
+  if(S.done) return;
+  if(el.classList.contains("pg-set")){ hint("这块已经放在棋盘上了，点它可以旋转方向。"); return; }
+  if(cellIdx === +el.getAttribute("data-idx")){
+    placeIn(el, cells[cellIdx]);
+  }else{
+    S.steps++; hud();
+    hint("第 " + (cellIdx+1) + " 格不是它的位置，再看看参考图。");
+  }
+}
+function bindEvents(el){
+  el.addEventListener("pointerdown", function(e){
+    if(S.done || (e.pointerType==="mouse" && e.button>0)) return;
+    e.preventDefault();
+    try{ el.setPointerCapture(e.pointerId); }catch(_){}
+    dragInfo = { el:el, id:e.pointerId, x0:e.clientX, y0:e.clientY,
+                 moved:false, fromSet:el.classList.contains("pg-set") };
+    startClock();
+  });
+  el.addEventListener("pointermove", function(e){
+    if(!dragInfo || dragInfo.el!==el || e.pointerId!==dragInfo.id) return;
+    var dx = e.clientX-dragInfo.x0, dy = e.clientY-dragInfo.y0;
+    if(!dragInfo.moved && Math.abs(dx)+Math.abs(dy) > 7){
+      if(dragInfo.fromSet){ dragInfo = null; return; }   // 已放置的碎片只响应点击（旋转）
+      dragInfo.moved = true;
+      lift(el, e.pointerId);
+    }
+    if(dragInfo && dragInfo.moved){
+      e.preventDefault();
+      dragInfo.dx = dx; dragInfo.dy = dy;   // 只记数，写入交给下一帧
+      scheduleFrame();
+    }
+  });
+  el.addEventListener("pointerup", function(e){ finishPointer(e, false); });
+  el.addEventListener("pointercancel", function(e){ finishPointer(e, true); });
+  el.addEventListener("keydown", function(e){
+    if(S.done) return;
+    if(e.key==="Enter" || e.key===" "){ e.preventDefault(); startClock(); rotatePiece(el); }
+    else if(/^[1-9]$/.test(e.key)){ e.preventDefault(); startClock(); tryPlace(el, +e.key-1); }
+  });
+}
+function finishPointer(e, cancelled){
+  if(!dragInfo || e.pointerId!==dragInfo.id) return;
+  var info = dragInfo;
+  if(cancelled){ cancelDrag(); }
+  else if(info.moved){ drop(info.el, false); }
+  else{ dragInfo = null; rotatePiece(info.el); }
+}
+/* 指针捕获意外丢失时，仍能在窗口边界完成拖放或安全归位。 */
+window.addEventListener("pointerup", function(e){ finishPointer(e, false); });
+window.addEventListener("pointercancel", function(e){ finishPointer(e, true); });
+window.addEventListener("blur", cancelDrag);
+window.addEventListener("pagehide", cancelDrag);
+document.addEventListener("visibilitychange", function(){ if(document.hidden) cancelDrag(); });
+window.addEventListener("lb:reveal", function(){
+  var page = root.closest(".lb-page");
+  if(page && !page.classList.contains("is-on")) cancelDrag();
+});
+function checkWin(){
+  if(S.done || S.placed < 9) return;
+  var ps = root.querySelectorAll(".pg-piece"), allOk = true, i;
+  for(i=0;i<ps.length;i++){ if((+ps[i].getAttribute("data-rot"))%4 !== 0){ allOk = false; break; } }
+  if(allOk) finish();
+}
+function confetti(){
+  var colors = ["#1E3A5F","#2E5C8A","#7C9BBD","#C8A96A","#F6F4EE"];
+  for(var i=0;i<26;i++){
+    var s = document.createElement("i");
+    s.className = "pg-cf";
+    s.style.left = (Math.random()*100) + "%";
+    s.style.background = colors[i % colors.length];
+    s.style.animationDelay = (Math.random()*.6) + "s";
+    s.style.animationDuration = (1.6 + Math.random()*1.2) + "s";
+    boardEl.appendChild(s);
+    (function(x){ setTimeout(function(){ x.remove(); }, 3800); })(s);
+  }
+}
+function finish(){
+  S.done = true; stopClock();
+  var secs = S.started ? Math.floor((Date.now()-S.t0)/1000) : 0;
+  boardEl.classList.add("pg-done");
+  winName.textContent = IMG[S.k][0] + "（" + IMG[S.k][1] + "）";
+  winMeta.textContent = "用时 " + fmt(secs) + " · 拖放 " + S.steps + " 步 · 旋转 " + S.rots + " 次";
+  winEl.classList.add("pg-on");
+  hint("拼好了！「" + IMG[S.k][0] + "」已恢复原样。");
+  if(!reduce) confetti();
+}
+function setup(k){
+  cancelDrag();
+  stopClock();
+  S.k = k; S.src = srcOf(k);
+  S.steps = 0; S.rots = 0; S.placed = 0; S.started = false; S.done = false;
+  elTime.textContent = "00:00";
+  boardEl.classList.remove("pg-done");
+  winEl.classList.remove("pg-on");
+  trayEl.textContent = "";
+  cells.forEach(function(c){ c.textContent = ""; });
+  var order = shuffled();
+  var rots = order.map(function(){ return Math.floor(Math.random()*4); });
+  if(rots.every(function(r){ return r===0; })){ rots[0] = 1 + Math.floor(Math.random()*3); }
+  order.forEach(function(idx, i){
+    var slot = document.createElement("div");
+    slot.className = "pg-slot";
+    var p = makePiece(idx);
+    p.setAttribute("data-rot", rots[i]);
+    applyRot(p);
+    p.setAttribute("aria-label", pieceLabel(p));
+    slot.appendChild(p);
+    trayEl.appendChild(slot);
+  });
+  refImg.src = S.src;
+  hud();
+  hint("已打乱九块碎片与朝向：点击碎片旋转，拖到棋盘上它所属的格子。");
+}
+picks.forEach(function(b){
+  b.addEventListener("click", function(){
+    picks.forEach(function(x){ x.setAttribute("aria-pressed", x===b ? "true" : "false"); });
+    setup(b.getAttribute("data-k"));
+    b.blur();
+  });
+});
+document.getElementById("pgReset").addEventListener("click", function(){
+  setup(S.k);
+  hint("已重置：碎片与朝向重新打乱，计时清零。");
+});
+document.getElementById("pgRef").addEventListener("click", function(){
+  var on = boardEl.classList.toggle("pg-showref");
+  this.setAttribute("aria-pressed", on ? "true" : "false");
+  this.textContent = "参考图：" + (on ? "开" : "关");
+});
+document.getElementById("pgAgain").addEventListener("click", function(){ setup(S.k); });
+document.getElementById("pgNext").addEventListener("click", function(){
+  var i = ORDER.indexOf(S.k);
+  var b = root.querySelector('.pg-pick[data-k="' + ORDER[(i+1) % ORDER.length] + '"]');
+  b.click();
+});
+setup("fushou");
+})();
+</script>
+
+    </div>
+  </section>
+  <nav class="pn" aria-label="继续浏览">
+    <div class="shell"><div class="pn__row">
+      <a href="../index.html#archive"><span class="pn__lab">← 返回</span><span class="pn__name">纹样档案</span></a>
+      <a class="pn--next" href="contact.html"><span class="pn__lab">下一页 →</span><span class="pn__name">联系我们</span></a>
+    </div></div>
+  </nav>
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__cols">
+      <details>
+        <summary>本档案</summary>
+        <ul><li><a href="../index.html#intro">蓝印花布的身世</a></li><li><a href="../index.html#value">蓝印花布的价值</a></li><li><a href="../index.html#vision">关于本档案</a></li></ul>
+      </details>
+      <details>
+        <summary>纹样档案</summary>
+        <ul><li><a href="../index.html#themes">按题材浏览</a></li><li><a href="../index.html#archive">给每一朵花，留一个数字分身</a></li><li><a href="../index.html#download">下载纹样</a></li></ul>
+      </details>
+      <details>
+        <summary>技艺</summary>
+        <ul><li><a href="../index.html#craft">五道工序</a></li><li><a href="../index.html#people">传承人</a></li><li><a href="../pages/studio.html">纹样共创工坊</a></li></ul>
+      </details>
+      <details>
+        <summary>联系</summary>
+        <ul><li><a href="../pages/contact.html">联系我们</a></li><li><a href="../pages/media.html">媒体资料</a></li></ul>
+      </details>
+    </div>
+    <p class="foot__note">本项目为大学生非物质文化遗产宣传公益作品，非商业用途。页面中的史料、年份与数据引自：中国非物质文化遗产网《「精彩非遗—分享·传承」听吴元新讲南通蓝印花布印染技艺》；《光明日报》2024 年 11 月 17 日《江苏南通蓝印花布：蓝白相生 素花蕴雅》（王蕾）；江苏省"一带一路"网《江苏南通蓝印花布印染技艺是首批国家级"非遗"》；上海市嘉定区人民政府网站《安亭与南通蓝印花布博物馆共建交流》（《嘉定报》）；央视《走遍中国》南通《蓝白色的世界》；国家质量监督检验检疫总局 2013 年第 190 号公告（南通蓝印花布地理标志产品质量技术要求）；央视网《非遗有新人｜吴灵姝：草木本心 布上青花》。页面中的纹样图形为依据传统题材重绘的示意图形，不代表任何特定藏品原件。</p>
+    <p class="foot__note">页面照片引自：央视网《非遗有新人｜吴灵姝：草木本心 布上青花》（原载荔枝新闻，2023）；《光明日报》2024 年 11 月 17 日《江苏南通蓝印花布：蓝白相生 素花蕴雅》（记者 闫汇芳、郭冠东 摄）；《知识就是力量》杂志《准备好铳子、刮浆刀、刻刀……一起制作爷爷奶奶的时尚》（2022，刊于人民日报客户端「人民号」，藏品图由南通蓝印花布博物馆提供）；南通蓝印花布博物馆官网《「元新蓝」蓝印花图案知多少？》（纹样选自吴元新《中国蓝印花布纹样大全》）。照片版权归原机构与摄影者所有，此处仅作非商业性非遗宣传之用。逐条出处见<a href="../pages/media.html">媒体资料</a>页。</p>
+    <div class="foot__legal">
+      <span>© 2026 蓝印花布数字档案</span>
+      <a href="../pages/contact.html">隐私条款</a>
+      <a href="../pages/contact.html">使用条款</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/lanben.js"></script>
+<script src="../assets/lanben-dl.js" defer></script>
+
+</body>
+</html>
